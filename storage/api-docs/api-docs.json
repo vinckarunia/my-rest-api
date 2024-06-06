@@ -247,6 +247,13 @@
                 "xml": {
                     "name": "Book"
                 }
+            },
+            "User": {
+                "title": "User model",
+                "description": "User model",
+                "xml": {
+                    "name": "User"
+                }
             }
         }
     }

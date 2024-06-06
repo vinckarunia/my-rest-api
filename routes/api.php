@@ -6,6 +6,18 @@ use App\Http\Controllers\API\BookController;
 
 Route::get('/user', function (Request $request) {
     return $request->user();
-})->middleware('auth:sanctum');
+})->middleware('auth:api');
 
-Route::apiResource('books', BookController::class);
+Route::resource('books', BookController::class, [
+    'only' => [
+        'index',
+        'show'
+    ]
+]);
+
+Route::resource('books', BookController::class, [
+    'except' => [
+        'index',
+        'show'
+    ]
+])->middleware(['auth:api']);
