@@ -61,8 +61,9 @@ class BookController extends Controller
      *                       "cover": "https://ebooks.gramedia.com/id/buku/trio-detektif-1-misteri-puri-setan",
      *                       "description": "",
      *                       "price": 100000}
-     *          ),
-     *      )
+     *          )
+     *      ),
+     *      security={{"passport_token_ready":{},"passport":{}}}
      * )
      */
     public function store(Request $request)
@@ -166,8 +167,9 @@ class BookController extends Controller
      *                       "cover": "https://ebooks.gramedia.com/id/buku/trio-detektif-1-misteri-puri-setan",
      *                       "description": "",
      *                       "price": 100000}
-     *          ),
-     *      )
+     *          )
+     *      ),
+     *      security={{"passport_token_ready":{},"passport":{}}}
      * )
      */
     public function update(Request $request, $id)
@@ -224,6 +226,7 @@ class BookController extends Controller
      *              format="int64"
      *          )
      *      ),
+     *      security={{"passport_token_ready":{},"passport":{}}}
      * )
      */
     public function destroy ($id)
