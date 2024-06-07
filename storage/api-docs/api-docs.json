@@ -146,13 +146,13 @@
         "/api/books": {
             "get": {
                 "tags": [
-                    "book"
+                    "Book"
                 ],
-                "description": "Display a listing of items",
+                "summary": "Display a listing of the items",
                 "operationId": "index",
                 "responses": {
                     "200": {
-                        "description": "succesful",
+                        "description": "successful",
                         "content": {
                             "application/json": {
                                 "schema": {}
@@ -163,7 +163,7 @@
             },
             "post": {
                 "tags": [
-                    "book"
+                    "Book"
                 ],
                 "summary": "Store a newly created item",
                 "operationId": "store",
@@ -401,6 +401,58 @@
                 "description": "User model",
                 "xml": {
                     "name": "User"
+                }
+            }
+        },
+        "parameters": {
+            "_page": {
+                "name": "_page",
+                "in": "query",
+                "description": "current page",
+                "required": true,
+                "schema": {
+                    "type": "integer",
+                    "format": "int64",
+                    "example": 1
+                }
+            },
+            "_limit": {
+                "name": "_limit",
+                "in": "query",
+                "description": "max item in a page",
+                "required": true,
+                "schema": {
+                    "type": "integer",
+                    "format": "int64",
+                    "example": 10
+                }
+            },
+            "_search": {
+                "name": "_search",
+                "in": "query",
+                "description": "word to search",
+                "required": false,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "_producer": {
+                "name": "_producer",
+                "in": "query",
+                "description": "search by producer like DJI, etc",
+                "required": false,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "_sort_by": {
+                "name": "_sort_by",
+                "in": "query",
+                "description": "word to search",
+                "required": false,
+                "schema": {
+                    "type": "string",
+                    "example": "latest"
                 }
             }
         },
